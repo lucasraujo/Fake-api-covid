@@ -13,11 +13,24 @@ POST /users
 Qualquer um desses 3 endpoints irá cadastrar o usuário na lista de "Users", sendo que os campos obrigatórios são os de email e password.
 Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do cadastro dos usuários.
 
+## exemplo de resposta: 
+{<br>
+	"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnppbmhvQG1haWwuY29tIiwiaWF0IjoxNjczNDUxMDE3LCJleHAiOjE2NzM0NTQ2MTcsInN1YiI6IjEifQ.J6zeOpTimkvYq9P_4B4j2FVqEljn-ONUf_g-ResgNUs",<br>
+	"user": {<br>
+		"email": "kenzinho@mail.com",<br>
+		"name": "Kenzinho",<br>
+		"age": 38,<br>
+		"id": 1<br>
+	}<br>
+}<br>
+
 
 # Login
 
 POST /login <br/>
 POST /signin
+
+Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
 
 ## exemplo de resposta: 
 {<br>
@@ -30,7 +43,6 @@ POST /signin
 	}<br>
 }<br>
 
-Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
 
 # pegar usuario
 
