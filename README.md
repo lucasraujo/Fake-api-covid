@@ -24,7 +24,7 @@ Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do
 		"name": "Kenzinho",
 		"age": 38,
 		"id": 1
-	}<br>
+	}
 }
 ~~~
 <br>
