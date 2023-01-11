@@ -4,6 +4,8 @@
 
  (https://fake-api-covid.onrender.com)
 
+ [![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=Fake-api-covid&uri=https%3A%2F%2Fraw.githubusercontent.com%2Flucasraujo%2FFake-api-covid%2Fmain%2FInsomnia_2023-01-11.json)
+
 # Cadastro
 
 POST /register <br/>
