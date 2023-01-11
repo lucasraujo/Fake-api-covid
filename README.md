@@ -128,6 +128,19 @@ Voce tambem precisa fornecer o tokem do usuario
 
 # Pegar Mapas dos estados 
 
-GET/ listMapsUfs 
+GET/listMapsUfs 
+
+E nao pecisa passar mais nada 
+
+
+# pagar  os dados da populaçao de cada estado 
+
+GET/listBrazilDataPopulation
+
+E nao pecisa passar mais nada 
+
+# pegar todo o histocico de casos 
+
+GET/listBrazilHistoryCases
 
 E nao pecisa passar mais nada 
