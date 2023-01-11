@@ -11,7 +11,9 @@ app.db = router.db;
 const rules = auth.rewriter({
   users: 600,
   favoriteIds: 640,
-  listMapsUfs: 444
+  listMapsUfs: 444,
+  listBrazilDataPopulation: 444,
+  listBrazilHistoryCases:444
 });
 
 app.use(cors());
