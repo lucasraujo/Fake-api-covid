@@ -124,3 +124,10 @@ Voce precisa fornecer o tokem do usuario e nao precisa de corpo
 DELETE/ favoriteIds/4  <- O numero 4 representa o id do objeto a ser deletado<br/>
 
 Voce tambem precisa fornecer o tokem do usuario 
+
+
+# Pegar Mapas dos estados 
+
+GET/ listMapsUfs 
+
+E nao pecisa passar mais nada 
