@@ -198,6 +198,7 @@ GET/listBrazilHistoryCases
 
 E nao pecisa passar mais nada 
 
+## exemplo de resposta:
 ~~~json
 [
 	{
