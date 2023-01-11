@@ -1,12 +1,10 @@
-# json-server-base
+# Fake-api-covid
 
-Esse é o repositório com a base de JSON-Server + JSON-Server-Auth já configurada, feita para ser usada no desenvolvimento das API's nos Projetos Front-end.
+## Endpoint
 
-## Endpoints
+ (https://fake-api-covid.onrender.com)
 
-Assim como a documentação do JSON-Server-Auth traz (https://www.npmjs.com/package/json-server-auth), existem 3 endpoints que podem ser utilizados para cadastro e 2 endpoints que podem ser usados para login.
-
-### Cadastro
+# Cadastro
 
 POST /register <br/>
 POST /signup <br/>
@@ -16,57 +14,100 @@ Qualquer um desses 3 endpoints irá cadastrar o usuário na lista de "Users", se
 Você pode ficar a vontade para adicionar qualquer outra propriedade no corpo do cadastro dos usuários.
 
 
-### Login
+# Login
 
 POST /login <br/>
 POST /signin
 
+## exemplo de resposta: 
+{<br>
+	"accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImtlbnppbmhvQG1haWwuY29tIiwiaWF0IjoxNjczNDUxMDE3LCJleHAiOjE2NzM0NTQ2MTcsInN1YiI6IjEifQ.J6zeOpTimkvYq9P_4B4j2FVqEljn-ONUf_g-ResgNUs",<br>
+	"user": {<br>
+		"email": "kenzinho@mail.com",<br>
+		"name": "Kenzinho",<br>
+		"age": 38,<br>
+		"id": 1<br>
+	}<br>
+}<br>
+
 Qualquer um desses 2 endpoints pode ser usado para realizar login com um dos usuários cadastrados na lista de "Users"
 
-### Adicionar aos favoritos
+# pegar usuario
+
+Get/users/1  <- O numero 1 representa o id do usuario.<br/>
+
+Voce tambem precisa fornecer o tokem do usuario
+
+## exemplo de resposta: 
+{<br>
+	"email": "kenzinho@mail.com",<br>
+	"password": "$2a$10$YQiiz0ANVwIgpOjYXPxc0O9H2XeX3m8OoY1xk7OGgxTnOJnsZU7FO",<br>
+	"name": "Kenzinho",<br>
+	"age": 38,<br>
+	"id": 1<br>
+}<br>
+
+
+# Adicionar aos favoritos
 
 POST /favoriteIds <br/>
 
 Voce precisa fornecer o tokem do usuario e o corpo da requisição com o seguinte padrão : 
 
-{
-	"favoriteObject":{"death":12},            <- favoriteObject representa a chave do objeto que iremos favoritar e {"death":12} representa o objeto favoritado <br/>
-	"userId":1                                <-Presisamos pasar o id do usuario  com o a seguinte chave  "userId"
-}
 
-exemplo de resposta: 
+{<br>
+	"favoriteObject": {<br>
+		"country": "Bolivia",<br>
+		"cases": 19,<br>
+		"confirmed": 19,<br>
+		"deaths": 0,<br>
+		"recovered": 0,<br>
+		"updated_at": "2020-03-21T12:43:08.000Z"<br>
+	},<br>
+	"userId": 1  <- Presisamos pasar o id do usuario 
+}<br>
 
-{
-	"favoriteObject": { 
-		"death": 12
-	},
-	"userId": 1,
-	"id": 7
-}
 
-### Pegar os favoritos do usuario 
+## exemplo de resposta: 
+
+{<br>
+	"favoriteObject":{<br>
+      "country": "Bolivia",<br>
+      "cases": 19,<br>
+      "confirmed": 19,<br>
+      "deaths": 0,<br>
+      "recovered": 0,<br>
+      "updated_at": "2020-03-21T12:43:08.000Z"<br>
+    },<br>
+	"userId":1,<br>
+	"id":12<br>
+}<br>
+
+# Pegar os favoritos do usuario 
 
 GET /favoriteIds?userId=1  <-colocamos o id do usuario aqui  <br/>
 
 Voce precisa fornecer o tokem do usuario e nao precisa de corpo 
 
-exemplo de resposta: 
+## exemplo de resposta: <br>
 
-[{
-	"favoriteObject": 
-		"death": 12
-	},
-	"userId": 1,
-	"id": 7
-},{
-	"favoriteObject": {
-		"death": 13
-	},
-	"userId": 1,
-	"id": 9
-}]
+[<br>
+	{<br>
+		"favoriteObject": {<br>
+			"country": "Bolivia",<br>
+			"cases": 19,<br>
+			"confirmed": 19,<br>
+			"deaths": 0,<br>
+			"recovered": 0,<br>
+			"updated_at": "2020-03-21T12:43:08.000Z"<br>
+		},<br>
+		"userId": 1,<br>
+		"id": 6<br>
+	}<br>
+]
 
-### Deletar favoritos do usuario
+
+# Deletar dos favoritos do usuario
 
 DELETE/ favoriteIds/4  <- O numero 4 representa o id do objeto a ser deletado<br/>
 
